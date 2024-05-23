@@ -1,0 +1,14 @@
+yt https://youtube.com
+mensa https://stwno.de/de/gastronomie/speiseplan/oth-regensburg/seybothstrasse-mittags
+gl https://gitlab.othr.de/IM/lfd
+wiki wiki.lfdr.de
+sp https://sp.hs-regensburg.de/QuO/QuD-Portal/SitePages/Homepage.aspx
+ss https://syncandshare.lrz.de/login
+lfd https://lfdr.de
+qlm https://qlm.bull.com/qlm-doc/
+gpt https://chat.openai.com
+benno https://i.bbenno.com/
+ti https://elearning.oth-regensburg.de/course/view.php?id=5722
+over https://overleaf.com
+deeplwrite https://www.deepl.com/write
+deepltranslate https://www.deepl.com/translate
