@@ -82,6 +82,7 @@ bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
 bindsym $mod+semicolon focus right
+bindsym $mod+odiaeresis focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -94,6 +95,7 @@ bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
 bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+odiaeresis focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -194,6 +196,7 @@ mode "resize" {
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym odiaeresis resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -251,17 +254,39 @@ for_window [class="thunderbird"] layout tabbed
 # for_window [class="zoom"] layout tabbed
 
 
-bindsym $mod+apostrophe exec "/home/simon/scripts/task_switcher.py --group-by none -- -i -nb '#0D0825' -nf '#EFEDAA' -sb '#CBB2DE' -sf '#0D0825' -fn 'DejaVu Sans Mono:bold:pixelsize=18'"
+bindsym $mod+apostrophe exec "/home/simon/scripts/task_switcher.py -- -i -nb '#0D0825' -nf '#EFEDAA' -sb '#CBB2DE' -sf '#0D0825' -fn 'DejaVu Sans Mono:bold:pixelsize=18'"
+bindsym $mod+adiaeresis exec "/home/simon/scripts/task_switcher.py -- -i -nb '#0D0825' -nf '#EFEDAA' -sb '#CBB2DE' -sf '#0D0825' -fn 'DejaVu Sans Mono:bold:pixelsize=18'"
+# bindsym $mod+apostrophe exec "/home/simon/scripts/task_switcher.py --group-by none -- -i -nb '#0D0825' -nf '#EFEDAA' -sb '#CBB2DE' -sf '#0D0825' -fn 'DejaVu Sans Mono:bold:pixelsize=18'"
 bindsym $mod+space exec "bash /home/simon/scripts/toggle_layout.sh"
-bindsym $mod+o exec "bash /home/simon/scripts/links.sh"
-bindsym $mod+shift+a exec "keepass -auto-type"
+bindsym $mod+o exec "/home/simon/scripts/links.sh"
+# bindsym $mod+shift+a exec "keepass -auto-type"
 bindsym $mod+ctrl+l exec "i3lock"
 
-bindsym $mod+greater move workspace to output right
-bindsym $mod+less move workspace to output left
+bindsym $mod+shift+greater move workspace to output right
+bindsym $mod+shift+less move workspace to output left
 
 bindsym $mod+Shift+S exec "maim -s | xclip -selection clipboard -t image/png"
 bindsym $mod+ctrl+Shift+S exec "/home/simon/scripts/snipping_tool.sh"
+
+bindsym $mod+period exec "splatmoji type"
+bindsym $mod+p exec "/home/simon/scripts/peripheral.sh"
+
+
+mode "quick_launch" {
+    bindsym f exec firefox; mode "default"
+    bindsym t exec thunderbird; mode "default"
+    bindsym o exec obsidian; mode "default"
+    bindsym c exec codium; mode "default"
+    bindsym k exec keepassxc; mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+m mode "quick_launch"
+
+
 
 
 exec_always "autorandr --change && feh --bg-fill /home/simon/Pictures/jwst1.png && bash /home/simon/.config/polybar/launch.sh"

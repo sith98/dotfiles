@@ -1,0 +1,15 @@
+#!/bin/bash
+
+connections=$(nmcli -t -f NAME connection show)
+
+# Use dmenu to select a name
+selected_conn=$(echo "$connections" | dmenu -i -nb '#0D0825' -nf '#EFEDAA' -sb '#CBB2DE' -sf '#0D0825' -fn 'DejaVu Sans Mono:bold:pixelsize=18')
+
+# If a name was selected
+if [ -n "$selected_conn" ]; then
+    # Find corresponding URL using awk
+    if echo "$connections" | grep -q "$selected_conn"; then
+        nmcli c up "$selected_conn"
+    fi
+fi
+

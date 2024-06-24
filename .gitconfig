@@ -3,3 +3,7 @@
 	name = sith98
 [init]
 	defaultBranch = main
+[alias]
+	graph = log --all --oneline --decorate --graph
+[core]
+	editor = /bin/nvim
