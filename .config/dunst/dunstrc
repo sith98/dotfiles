@@ -357,8 +357,8 @@
     #default_icon = /path/to/icon
 
 [spotify]
-	desktop_entry = spotify-launcher
-	skip_display = yes
+    appname=Spotify
+    skip_display = yes
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

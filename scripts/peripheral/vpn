@@ -1,0 +1,7 @@
+#!/bin/bash
+network=OTH
+if nmcli -f GENERAL.STATE c show "${network}" | grep -q activated; then
+    nmcli c down "${network}"
+else
+    nmcli c up "${network}"
+fi

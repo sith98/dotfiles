@@ -298,5 +298,5 @@ exec_always "killall picom; picom -b"
 exec 'dunst'
 exec --no-startup-id i3-msg 'workspace 3:browse; exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'workspace 1:comm; exec thunderbird'
-# exec --no-startup-id i3-msg 'workspace 1:comm; exec dino'
+exec --no-startup-id i3-msg 'workspace 1:comm; exec dino'
 exec --no-startup-id i3-msg 'workspace 1:comm; exec signal-desktop'

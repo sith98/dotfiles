@@ -14,5 +14,6 @@ deeplwrite https://www.deepl.com/write
 deepltranslate https://www.deepl.com/translate
 wolfgang https://oth-regensburg.zoom.us/j/9125785205?pwd=SmJyQms2ZS9pSTU5YXo0eDZWQ2xJUT09
 bayzeit https://bayzeit-web.ur.de/BSCWS/?bb.server=bayzeit.uni-regensburg.de&bb.port=4800#baps
-github github.com
+gh github.com
 llm llm.lfdr.de
+monitor im-lfd-qlm.hs-regensburg.de/monitor
