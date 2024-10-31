@@ -46,6 +46,7 @@ bindsym $mod+Prior exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym $mod+Next exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym $mod+Escape exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86AudioPlay exec playerctl play-pause
 
@@ -270,11 +271,12 @@ bindsym $mod+ctrl+Shift+S exec "/home/simon/scripts/snipping_tool.sh"
 
 bindsym $mod+period exec "splatmoji type"
 bindsym $mod+p exec "/home/simon/scripts/peripheral.sh"
+bindsym $mod+t exec "/home/simon/scripts/thunar.sh"
 
 
 mode "quick_launch" {
     bindsym f exec firefox; mode "default"
-    bindsym t exec thunderbird; mode "default"
+    bindsym t exec thunar; mode "default"
     bindsym o exec obsidian; mode "default"
     bindsym c exec codium; mode "default"
     bindsym k exec keepassxc; mode "default"
@@ -296,7 +298,9 @@ exec_always /usr/bin/dropbox &
 exec_always "killall picom; picom -b"
 
 exec 'dunst'
-exec --no-startup-id i3-msg 'workspace 3:browse; exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'workspace 1:comm; exec thunderbird'
 exec --no-startup-id i3-msg 'workspace 1:comm; exec dino'
 exec --no-startup-id i3-msg 'workspace 1:comm; exec signal-desktop'
+exec --no-startup-id i3-msg 'workspace 1:comm; exec keepassxc'
+exec --no-startup-id i3-msg 'workspace 3:browse; exec /usr/bin/firefox'
+

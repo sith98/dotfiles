@@ -7,3 +7,5 @@
 	graph = log --all --oneline --decorate --graph
 [core]
 	editor = /bin/nvim
+[push]
+	autoSetupRemote = true

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+sinks=$(pactl list sinks short | awk '{print $2}')
+current_sink=$(pactl get-default-sink)
+
+# Use dmenu to select a name
+selected_sink=$(echo "$sinks" | dmenu -i -l 10 -p "Current: $current_sink)" -nb '#0D0825' -nf '#EFEDAA' -sb '#CBB2DE' -sf '#0D0825' -fn 'DejaVu Sans Mono:bold:pixelsize=18')
+
+# If a name was selected
+if [ -n "$selected_sink" ]; then
+    # Find corresponding URL using awk
+    if echo "$sinks" | grep -q "$selected_sink"; then
+        pactl set-default-sink $selected_sink
+    fi
+fi
+
