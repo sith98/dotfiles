@@ -6,4 +6,5 @@ vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.opt.guicursor = "n-v-i-c:block-Cursor"
+vim.opt.linebreak = true
 
