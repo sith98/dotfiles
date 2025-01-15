@@ -1,6 +1,12 @@
 #!/bin/bash
 
-sinks=$(pactl list sinks short | awk '{print $2}')
+sinks=$(pactl list sinks | awk '
+/^Sink #/ { sink = ""; skip = 0 }
+/Name:/ { sink = $2 }
+/not available/ { skip = 1 }
+/^$/ { if (sink != "" && !skip) print sink }
+')
+# sinks=$(pactl list sinks short | awk '{print $2}')
 current_sink=$(pactl get-default-sink)
 
 # Use dmenu to select a name
