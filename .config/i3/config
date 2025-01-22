@@ -49,6 +49,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym $mod+Escape exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86AudioPlay exec playerctl play-pause
+bindsym $mod+BackSpace exec playerctl play-pause
 
 bindsym XF86MonBrightnessUp exec --no-startup-id /home/simon/scripts/add_to_file.sh /sys/class/backlight/amdgpu_bl1/brightness +15
 bindsym XF86MonBrightnessDown exec --no-startup-id /home/simon/scripts/add_to_file.sh /sys/class/backlight/amdgpu_bl1/brightness -15
@@ -280,6 +281,7 @@ mode "quick_launch" {
     bindsym o exec obsidian; mode "default"
     bindsym c exec codium; mode "default"
     bindsym k exec keepassxc; mode "default"
+    bindsym s exec spotify; mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -296,6 +298,7 @@ exec_always "autorandr --change && feh --bg-fill /home/simon/Pictures/jwst1.png 
 exec_always setxkbmap -option caps:swapescape
 exec_always /usr/bin/dropbox &
 exec_always "killall picom; picom -b"
+exec_always playerctld daemon
 
 exec 'dunst'
 exec --no-startup-id i3-msg 'workspace 1:comm; exec thunderbird'
