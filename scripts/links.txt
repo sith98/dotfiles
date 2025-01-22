@@ -22,3 +22,4 @@ reise https://www.mitarbeiterservice.bayern.de/
 whatsapp https://web.whatsapp.com
 board https://board.lfdr.de
 cloud https://cloud.lfdr.de
+desmos https://desmos.com/calculator/
