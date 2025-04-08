@@ -8,3 +8,6 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.opt.guicursor = "n-v-i-c:block-Cursor"
 vim.opt.linebreak = true
 
+vim.o.number = true
+vim.o.relativenumber = true
+

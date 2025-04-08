@@ -5,6 +5,7 @@ sinks=$(pactl list sinks | awk '
 /Name:/ { sink = $2 }
 /not available/ { skip = 1 }
 /^$/ { if (sink != "" && !skip) print sink }
+END { if (sink != "" && !skip) print sink }
 ')
 # sinks=$(pactl list sinks short | awk '{print $2}')
 current_sink=$(pactl get-default-sink)
